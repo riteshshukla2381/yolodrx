@@ -127,10 +127,13 @@ def index():
     f.close()
     return getOutput("temp.jpg")    
 
-@app.route("/download", methods=['get'])
+@app.route("/download", methods=['GET'])
 def index2():
     os.system("apt-get update && apt-get -y install wget")
     os.system("wget https://pjreddie.com/media/files/yolov3.weights")
+@app.route("/ls", methods=['GET'])
+def index2():
+    os.system("ls -l")
 
 if __name__=="__main__":
 
