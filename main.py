@@ -10,6 +10,7 @@ from base64 import b64decode,b64encode
 from PIL import Image
 from io import BytesIO
 import json
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -131,4 +132,6 @@ def index2():
     return "<h1>hello</h1>"
 
 if __name__=="__main__":
+    os.system("apt-get update && apt-get -y install wget")
+    os.system("wget https://pjreddie.com/media/files/yolov3.weights")
     app.run(debug=False,host="0.0.0.0")
