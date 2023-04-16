@@ -131,6 +131,7 @@ def index():
 def index2():
     os.system("apt-get update && apt-get -y install wget")
     os.system("wget https://pjreddie.com/media/files/yolov3.weights")
+    return "<h1>Downloaded</h1>"
 @app.route("/ls", methods=['GET'])
 def index3():
     os.system("ls -l")
